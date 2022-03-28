@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dictionary</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link href="{% static 'img/fav.ico' %}" rel="icon">
+</head>
+<body>
+<div class="wrap">
+   <div class="search">
+     <form action="word">
+      <input type="text" name="search" class="searchTerm" placeholder="Input Your Word Here">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+    </form>
+   </div>
+        <h3>Meaning: {{meaning}}</h3>
+        <h3>Synonyms: {% for s in synonym %}
+            {{s}},
+            {% endfor %}
+        </h3>
+        <h3>Antonyms: {% for a in antonym %}
+            {{a}},
+            {% endfor %}
+        </h3>
+    </div>
+
+
+<footer>
+    <div class="foot">
+        <h4>Made with 🖤 By Zahid.</h4>
+    </div>
+</footer>
+</body>
+</html>
